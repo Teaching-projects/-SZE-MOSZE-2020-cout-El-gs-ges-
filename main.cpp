@@ -20,12 +20,12 @@ void Fight(Character* FighterOne, Character* FighterTwo) {
 	writeCharacters(FighterOne, FighterTwo);
 	while (!endFight) {
 		Punch(FighterOne, FighterTwo);
-		if (FighterTwo->getHp() <= 0) {
+		if (FighterTwo->getHp() == 0) {
 			endFight = true;
 			break;
 		}
 		Punch(FighterTwo, FighterOne);
-		if (FighterTwo->getHp() <= 0) {
+		if (FighterTwo->getHp() == 0) {
 			endFight = true;
 			break;
 		}
@@ -33,17 +33,17 @@ void Fight(Character* FighterOne, Character* FighterTwo) {
 }
 
 void EndGame(Character* FighterOne, Character* FighterTwo) {
-	if (FighterOne->getHp() <= 0) {
+	if (FighterOne->getHp() == 0) {
 		std::cout << FighterOne->getName() << " died. " << FighterTwo->getName() << " wins\n";
 	}
-	if (FighterTwo->getHp() <= 0) {
+	if (FighterTwo->getHp() == 0) {
 		std::cout << FighterTwo->getName() << " died. " << FighterOne->getName() << " wins!\n";
 	}
 }
 
 int main(int argc, char** argv) {
-	Character* FighterOne = new Character(argv[1], argv[2], argv[3]);
-	Character* FighterTwo = new Character(argv[4], argv[5], argv[6]);
+	Character* FighterOne = new Character(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
+	Character* FighterTwo = new Character(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
 	Fight(FighterOne, FighterTwo);
 	EndGame(FighterOne, FighterTwo);
 	delete FighterOne;

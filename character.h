@@ -8,14 +8,14 @@
 class Character {
 private:
 	std::string Name;
-	int Dmg;
+	const int Dmg;
 	int Hp;
 public:
-	Character(std::string cName, std::string cDmg, std::string cHp);
+	Character(std::string cName, const int cDmg, int cHp);
 	~Character();
-	std::string getName();
-	int getHp();
-	int getDmg();
+	std::string getName() const;
+	int getHp() const;
+	int getDmg() const;
 	void Slash(int damage);
 };
 

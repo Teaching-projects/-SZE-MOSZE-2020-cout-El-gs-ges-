@@ -1,26 +1,18 @@
 #include "character.h"
 
 
-Character::Character(std::string cName, std::string cDmg, std::string cHp)
-{
-	Name = cName;
-	std::stringstream hpValue(cHp);
-	std::stringstream dmgValue(cDmg);
-	hpValue >> Hp;
-	dmgValue >> Dmg;
+Character::Character(std::string Name, int Dmg, int Hp) : Name(Name), Dmg(Dmg), Hp(Hp)
+{	
 }
-std::string Character::getName() {
+std::string Character::getName() const {
 	return Name;
 }
-int Character::getHp() {
+int Character::getHp() const {
 	return Hp;
 }
-int Character::getDmg() {
+int Character::getDmg() const {
 	return Dmg;
 }
-/*void Character::setHp(int newHealth) {
-	Hp = newHealth;
-}*/
 void Character::Slash(int damage) {
 	Hp = Hp - damage;
 	if (Hp < 0) {
