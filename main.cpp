@@ -41,8 +41,8 @@ void EndGame(Character* FighterOne, Character* FighterTwo) {
 
 
 int main(int argc, char** argv) {
-	Character* FighterOne = new Character("Naruto", std::stoi("100"), std::stoi("3000"));
-	Character* FighterTwo = new Character("Sasuke", std::stoi("100"), std::stoi("5000"));
+	Character* FighterOne = new Character(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
+	Character* FighterTwo = new Character(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
 	Fight(FighterOne, FighterTwo);
 	EndGame(FighterOne, FighterTwo);
 	delete FighterOne;
