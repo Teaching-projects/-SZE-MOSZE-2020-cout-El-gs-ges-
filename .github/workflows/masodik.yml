@@ -1,4 +1,4 @@
-name: Masodik workflow
+name: masodik
 
 on:
   push
