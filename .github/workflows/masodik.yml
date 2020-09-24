@@ -10,4 +10,4 @@ jobs:
     - uses: actions/checkout@v2
     - run: g++ *.cpp
     - run: ./run_test.sh
-    - run: diff output.txt good_output.txt
+    - run: diff good_output.txt output.txt
