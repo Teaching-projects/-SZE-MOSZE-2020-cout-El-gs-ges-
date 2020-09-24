@@ -4,6 +4,8 @@
 
 #include <string>
 #include <sstream>
+#include <fstream>
+#include <iostream>
 
 class Character {
 private:
@@ -17,6 +19,7 @@ public:
 	int getHp() const;
 	int getDmg() const;
 	void Slash(int damage);
+	static Character parseUnit(std::string fileName);
 };
 
 #endif

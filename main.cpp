@@ -4,19 +4,11 @@
 #include<fstream>
 #include "character.h"
 
-void writeCharacters(Character* FighterOne, Character* FighterTwo) {
-	std::cout << FighterOne->Character::getName() << " Hp:" << FighterOne->Character::getHp() << " Damage: " << FighterOne->Character::getDmg() << std::endl;
-	std::cout << FighterTwo->Character::getName() << " Hp:" << FighterTwo->Character::getHp() << " Damage: " << FighterTwo->Character::getDmg() << std::endl;
-}
-
 void Punch(Character* FighterOne, Character* FighterTwo) {
-	std::cout << FighterOne->getName() << " -> " << FighterTwo->getName() << std::endl;
 	FighterTwo->Slash(FighterOne->getDmg());
-	writeCharacters(FighterOne, FighterTwo);
 }
 
 void Fight(Character* FighterOne, Character* FighterTwo) {
-	writeCharacters(FighterOne, FighterTwo);
 	while ((FighterOne->getHp() != 0) && (FighterTwo->getHp() != 0)) {
 		Punch(FighterOne, FighterTwo);
 		if (FighterTwo->getHp() == 0) {
@@ -31,21 +23,29 @@ void Fight(Character* FighterOne, Character* FighterTwo) {
 
 void EndGame(Character* FighterOne, Character* FighterTwo) {
 	if (FighterOne->getHp() == 0) {
-		std::cout << FighterOne->getName() << " died. " << FighterTwo->getName() << " wins\n";
+		std::cout << FighterTwo->getName() << " wins. Remaining HP: " << FighterTwo->getHp() << "\n";
 	}
 	if (FighterTwo->getHp() == 0) {
-		std::cout << FighterTwo->getName() << " died. " << FighterOne->getName() << " wins!\n";
+		std::cout << FighterOne->getName() << " wins. Remaining HP: " << FighterOne->getHp() << "\n";
 	}
 }
 
 
 
 int main(int argc, char** argv) {
-	Character* FighterOne = new Character(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
-	Character* FighterTwo = new Character(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
-	Fight(FighterOne, FighterTwo);
-	EndGame(FighterOne, FighterTwo);
-	delete FighterOne;
-	delete FighterTwo;
+	Character* FighterOne = new Character(Character::parseUnit(argv[1]));
+	Character* FighterTwo = new Character(Character::parseUnit(argv[2]));
+	if (FighterOne->getName()=="" || FighterTwo->getName() == "") {
+		std::cout << "File error!!!" << std::endl;
+		delete FighterOne;
+		delete FighterTwo;
+		return 1;
+	}
+	else {
+		Fight(FighterOne, FighterTwo);
+		EndGame(FighterOne, FighterTwo);
+		delete FighterOne;
+		delete FighterTwo;
+	}
 	return 0;
 }
