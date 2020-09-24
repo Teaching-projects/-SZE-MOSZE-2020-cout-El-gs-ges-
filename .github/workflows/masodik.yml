@@ -9,5 +9,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: g++ *.cpp
-    - run: ./run_test.sh a.out output.txt
-    - run: diff output.txt good_output.txt
+    - run: ./run_test.sh
+    
