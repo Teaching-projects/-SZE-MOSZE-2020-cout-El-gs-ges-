@@ -37,15 +37,13 @@ int main(int argc, char** argv) {
 	Character* FighterTwo = new Character(Character::parseUnit(argv[2]));
 	if (FighterOne->getName()=="" || FighterTwo->getName() == "") {
 		std::cout << "File error!!!" << std::endl;
-		delete FighterOne;
-		delete FighterTwo;
 		return 1;
 	}
 	else {
 		Fight(FighterOne, FighterTwo);
 		EndGame(FighterOne, FighterTwo);
-		delete FighterOne;
-		delete FighterTwo;
 	}
+	delete FighterOne;
+	delete FighterTwo;
 	return 0;
 }
