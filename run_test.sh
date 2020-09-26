@@ -3,5 +3,5 @@
 IFS=$'\n'
 
 for i in `cat input.txt`; do 
-    echo $i | xargs ./$1 >> $2
+    echo $i | xargs ./a.out >> generated_output.txt
 done
