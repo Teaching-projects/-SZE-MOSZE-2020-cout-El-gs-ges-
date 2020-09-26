@@ -1,5 +1,5 @@
 {
-	name: "Deku",
-	hp: 3000,
-	dmg: 500
+	"name": "Deku",
+	"hp": 3000,
+	"dmg": 500
 }
