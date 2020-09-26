@@ -43,7 +43,5 @@ int main(int argc, char** argv) {
 		Fight(FighterOne, FighterTwo);
 		EndGame(FighterOne, FighterTwo);
 	}
-	delete FighterOne;
-	delete FighterTwo;
 	return 0;
 }
