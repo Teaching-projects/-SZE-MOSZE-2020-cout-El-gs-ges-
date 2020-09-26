@@ -13,6 +13,6 @@ jobs:
       - name: Permission
         run: chmod +x run_test.sh
       - name: Run Test script
-        run: ./run_test.sh a.out generated_output.txt
+        run: ./run_test.sh
       - name: Check differences
         run: diff generated_output.txt good_output.txt
