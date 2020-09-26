@@ -1,6 +1,6 @@
-./Units/character1.json ./Units/character2.json
-./Units/character1.json ./Units/character3.json
-./Units/character2.json ./Units/character1.json
-./Units/character2.json ./Units/character3.json
-./Units/character3.json ./Units/character1.json
-./Units/character3.json ./Units/character2.json
+Units/character1.json Units/character2.json
+Units/character1.json Units/character3.json
+Units/character2.json Units/character1.json
+Units/character2.json Units/character3.json
+Units/character3.json Units/character1.json
+Units/character3.json Units/character2.json
