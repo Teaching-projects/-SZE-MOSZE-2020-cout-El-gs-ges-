@@ -47,6 +47,7 @@ Character Character::parseUnit(std::string fileName) {
                 dmg += line[i];
             }
         }
+        file.close();
         return Character(name, stoi(dmg), stoi(hp));
     }
     else {
