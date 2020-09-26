@@ -2,8 +2,8 @@
 
 IFS=$'\n'
 
-rm $2
+rm generated_output.txt
 
 for i in `cat input.txt`; do 
-    echo $i | xargs ./$1 >> $2
+    echo $i | ./$1 >> generated_output.txt
 done
