@@ -33,8 +33,8 @@ void EndGame(Character* FighterOne, Character* FighterTwo) {
 
 
 int main(int argc, char** argv) {
-	Character* FighterOne = new Character(Character::parseUnit("Units/character1.json"));
-	Character* FighterTwo = new Character(Character::parseUnit("Units/character2.json"));
+	Character* FighterOne = new Character(Character::parseUnit(argv[1]));
+	Character* FighterTwo = new Character(Character::parseUnit(argv[2]));
 	if (FighterOne->getName()=="" || FighterTwo->getName() == "") {
 		std::cout << "File error!!!" << std::endl;
 		return 1;
