@@ -23,18 +23,18 @@ void Fight(Character* FighterOne, Character* FighterTwo) {
 
 void EndGame(Character* FighterOne, Character* FighterTwo) {
 	if (FighterOne->getHp() == 0) {
-		std::cout << FighterTwo->getName() << " wins. Remaining HP: " << FighterTwo->getHp();
+		std::cout << FighterTwo->getName() << " wins. Remaining HP: " << FighterTwo->getHp() << std::endl;
 	}
 	if (FighterTwo->getHp() == 0) {
-		std::cout << FighterOne->getName() << " wins. Remaining HP: " << FighterOne->getHp();
+		std::cout << FighterOne->getName() << " wins. Remaining HP: " << FighterOne->getHp() << std::endl;
 	}
 }
 
 
 
 int main(int argc, char** argv) {
-	Character* FighterOne = new Character(Character::parseUnit(argv[1]));
-	Character* FighterTwo = new Character(Character::parseUnit(argv[2]));
+	Character* FighterOne = new Character(Character::parseUnit("Units/character1.json"));
+	Character* FighterTwo = new Character(Character::parseUnit("Units/character2.json"));
 	if (FighterOne->getName()=="" || FighterTwo->getName() == "") {
 		std::cout << "File error!!!" << std::endl;
 		return 1;
@@ -43,5 +43,7 @@ int main(int argc, char** argv) {
 		Fight(FighterOne, FighterTwo);
 		EndGame(FighterOne, FighterTwo);
 	}
+	delete FighterOne;
+	delete FighterTwo;
 	return 0;
 }
