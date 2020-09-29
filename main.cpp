@@ -23,10 +23,10 @@ void Fight(Character* FighterOne, Character* FighterTwo) {
 
 void EndGame(Character* FighterOne, Character* FighterTwo) {
 	if (FighterOne->getHp() == 0) {
-		std::cout << FighterTwo->getName() << " wins. Remaining HP: " << FighterTwo->getHp() << std::endl;
+		std::cout << FighterTwo->getName() << " wins. Remaining HP: " << FighterTwo->getHp() << "\n";
 	}
 	if (FighterTwo->getHp() == 0) {
-		std::cout << FighterOne->getName() << " wins. Remaining HP: " << FighterOne->getHp() << std::endl;
+		std::cout << FighterOne->getName() << " wins. Remaining HP: " << FighterOne->getHp() << "\n";
 	}
 }
 
