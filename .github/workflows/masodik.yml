@@ -1,0 +1,18 @@
+name: masodik
+
+on: 
+  push
+
+jobs:
+  build_AND_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: g++ -Wall main.cpp character.cpp
+      - name: Permission
+        run: chmod +x run_test.sh
+      - name: Run Test script
+        run: ./run_test.sh
+      - name: Check differences
+        run: diff generated_output.txt good_output.txt
